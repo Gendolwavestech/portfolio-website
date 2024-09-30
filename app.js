@@ -17,7 +17,7 @@ const fadeInElements = document.querySelectorAll('.fade-in');
 function checkFadeIn() {
     fadeInElements.forEach(element => {
         const position = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
+        const screenPosition = window.innerHeight / 1.3;
 
         if (position < screenPosition) {
             element.classList.add('show');
@@ -25,7 +25,9 @@ function checkFadeIn() {
     });
 }
 
+window.addEventListener('load', checkFadeIn);
 window.addEventListener('scroll', checkFadeIn);
+
 // Project filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
