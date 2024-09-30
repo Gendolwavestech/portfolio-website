@@ -53,14 +53,16 @@ header ul li a:hover {
 
 /* Intro Section */
 #home {
-    height: 100vh; /* Full-screen height */
+    min-height: 100vh; /* Use min-height instead of height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: linear-gradient(135deg, var(--primary-color) 30%, var(--secondary-color) 100%);
     color: var(--accent-color);
+    padding: 20px; /* Add some padding to prevent content from being cut off */
 }
+
 
 .intro {
     padding: 20px;
@@ -93,6 +95,7 @@ header ul li a:hover {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding: 0 10px;
 }
 
 /* Projects Section */
@@ -219,6 +222,15 @@ h2 {
     .project-card {
         width: 100%;
     }
+    #home {
+        padding: 10px;
+    }
+    .intro h1{
+        font-size: 3em;
+    }
+    .intro-paragraph {
+        font-size: 1.1em; /* Smaller paragraph font size */
+        padding: 0 15px;
 }
 
 @media (min-width: 768px) {
