@@ -7,31 +7,31 @@
 
 /* CSS Variables for Color Management */
 :root {
-    --primary-color: #002147; /* Dark Blue */
-    --secondary-color: #ffcc00; /* Gold */
-    --text-color: #333333; /* Dark Gray */
-    --bg-color: #f0f4f8; /* Light Blue */
-    --accent-color: #ffffff; /* White */
+    --background-color: #ffffff; /* White background */
+    --text-color: #000000; /* Black for text */
+    --secondary-color: #d4af37; /* Gold */
+    --accent-color: #ffffff; /* White for accents */
+    --card-bg-color: #f8f8f8; /* Light gray for project cards */
+    --shadow-color: rgba(0, 0, 0, 0.15); /* Light shadow for depth */
 }
 
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.6; /* Improved readability */
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    width: 100%;
 }
 
 /* Header Styling */
 header {
-    background-color: var(--primary-color);
-    padding: 10px 0;
+    background-color: var(--background-color);
+    padding: 15px 40px; /* Balanced padding */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    box-shadow: 0 4px 6px var(--shadow-color); /* Subtle shadow */
 }
 
 header ul {
@@ -40,34 +40,34 @@ header ul {
 
 header ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 15px; /* Consistent margin */
 }
 
 header ul li a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    transition: color 0.3s; /* Smooth transition */
 }
 
 header ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Gold on hover */
 }
 
 /* Intro Section */
 #home {
-    min-height: 100vh; /* Use min-height instead of height */
+    min-height: 100vh; /* Full-screen height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-color) 30%, var(--secondary-color) 100%);
-    color: var(--accent-color);
+    background: linear-gradient(135deg, var(--background-color) 30%, var(--secondary-color) 100%);
+    color: var(--text-color);
     padding: 0;
     margin: 0;
     width: 100vw;
 }
-
 
 .intro {
     padding: 20px;
@@ -76,24 +76,24 @@ header ul li a:hover {
 .profile-pic {
     width: 300px;
     height: 300px;
-    border-radius: 40%; /* Circular */
+    border-radius: 50%; /* Circular */
     margin-bottom: 20px;
-    border: 4px solid var(--primary-color); /* Dark blue border */
+    border: 4px solid var(--secondary-color); /* Gold border */
     object-fit: cover;
 }
 
 .intro h1 {
-    font-size: 4em;
+    font-size: 4em; /* Large heading */
 }
 
 .intro p {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Larger intro text */
 }
 
 /* Intro Paragraph Styling */
 .intro-paragraph {
     font-size: 1.2em;
-    color: var(--accent-color); /* White */
+    color: var(--text-color); /* Gold */
     margin-top: 10px;
     line-height: 1.6;
     max-width: 600px; 
@@ -105,14 +105,14 @@ header ul li a:hover {
 
 /* Projects Section */
 #projects {
-    padding: 70px 0;
+    padding: 70px 0; /* Added padding for spacing */
 }
 
 /* Global h2 Styling */
 h2 {
     text-align: center;
     font-size: 2.5em; 
-    color: var(--primary-color); 
+    color: var(--text-color); /* Black for headings */
     margin-bottom: 20px; 
 }
 
@@ -124,78 +124,84 @@ h2 {
 .project-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; /* Space between project cards */
     justify-content: center;
 }
 
 .project-card {
-    background-color: var(--accent-color);
+    background-color: var(--card-bg-color); /* Light gray for project cards */
     border: 1px solid #ddd;
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for project cards */
+    box-shadow: 0 4px 10px var(--shadow-color); /* Enhanced shadow for depth */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* Rounded corners */
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover */
 }
 
 .project-card h3 {
-    color: var(--primary-color);
+    color: var(--text-color); /* Black for project titles */
 }
 
 .project-card a.btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Gold */
+    color: var(--accent-color); /* White */
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px; /* Rounded button */
+    transition: background-color 0.3s, transform 0.3s ,box-shadow 0.3s; /* Smooth transition */
 }
 
 .project-card a.btn:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+    background-color: var(--text-color); /* Darker blue on hover */
+    color: var(--accent-color); /* Change text color to white */
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Filter Buttons Styling */
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 15px; /* Space between buttons */
+    margin: 30px 0; /* Space around buttons */
 }
 
 .filter-btn {
     padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+    background-color: var(--text-color); /* Black */
+    color: var(--accent-color); /* White */
     border: none;
     cursor: pointer;
-    margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded edges */
     font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
 }
 
 .filter-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Gold */
+    color: var(--background-color); /* White */
+    transform: scale(1.1) rotate(2deg); /* Slight scaling effect on hover */
 }
 
 .filter-btn.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Gold */
+    color: var(--background-color); /* White */
 }
 
 /* Contact Section */
 #contact {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 50px 0;
+    background-color: var(--text-color); /* Black */
+    color: var(--accent-color); /* White */
+    padding: 50px 20px;
     text-align: center;
 }
 
@@ -204,12 +210,12 @@ h2 {
 }
 
 #contact ul li a {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Gold */
     text-decoration: none;
 }
 
 #contact ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* White */
 }
 
 /* Fade-in Animation */
@@ -227,29 +233,29 @@ h2 {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .project-card {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
     #home {
         padding: 10px;
     }
-    .intro h1{
-        font-size: 3em;
+    .intro h1 {
+        font-size: 3em; /* Smaller heading on mobile */
     }
     .intro-paragraph {
         font-size: 1.1em; /* Smaller paragraph font size */
         padding: 0 15px;
-}
+    }
 }
 
 @media (min-width: 768px) {
     .project-card {
-        width: 45%; 
+        width: 45%; /* Two cards per row */
     }
 }
 
 @media (min-width: 1024px) {
     .project-card {
-        width: 30%; 
+        width: 30%; /* Three cards per row */
     }
 }
 
@@ -258,18 +264,88 @@ h2 {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Gold */
+    color: var(--text-color); /* Black */
     padding: 15px 20px;
     border-radius: 50px;
     text-align: center;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.3s ease, transform 0.3s box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .floating-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+    background-color: #005bb5; /* Darker blue on hover */
+    color: var(--accent-color); /* White */
+    transform: scale(1.1) rotate(2deg); /* Slight scaling effect */
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color); /* Gold */
+    color: var(--text-color); /* Black */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em; /* Slightly smaller footer text */
+}
+
+footer a {
+    color: var(--text-color); /* Black */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center; /* Center text */
+}
+
+.mt-20 {
+    margin-top: 20px; /* Margin utility */
+}
+
+.mb-20 {
+    margin-bottom: 20px; /* Margin utility */
+}
+
+.p-20 {
+    padding: 20px; /* Padding utility */
+}
+/* Modal Styles */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Width of modal */
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

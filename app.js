@@ -11,6 +11,7 @@ navLinks.forEach(link => {
         });
     });
 });
+
 // Fade-in effect on scroll
 const fadeInElements = document.querySelectorAll('.fade-in');
 
@@ -50,3 +51,42 @@ filterButtons.forEach(button => {
         });
     });
 });
+
+// Back to top button functionality
+const backToTopButton = document.querySelector('.floating-btn');
+
+window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = 'block'; // Show button
+    } else {
+        backToTopButton.style.display = 'none'; // Hide button
+    }
+});
+
+// Smooth scroll to top
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scroll back to top
+});
+
+// Example of opening a modal when clicking a project card
+const projectCardsClickable = document.querySelectorAll('.project-card');
+
+projectCardsClickable.forEach(card => {
+    card.addEventListener('click', () => {
+        const projectInfo = card.querySelector('p').innerText; // Assuming you have a description in a <p> tag
+        openModal(projectInfo); // Function to display modal with project info
+    });
+});
+
+// Function to open a modal
+function openModal(info) {
+    const modal = document.querySelector('#modal'); // Your modal element
+    modal.querySelector('.modal-content').innerText = info; // Populate with project info
+    modal.style.display = 'block'; // Show modal
+}
+
+// Close modal event listener
+document.querySelector('.close-modal').addEventListener('click', () => {
+    document.querySelector('#modal').style.display = 'none'; // Hide modal
+});
+// Back to top button functionality
