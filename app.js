@@ -105,3 +105,10 @@ window.addEventListener('pageshow', function() {
 
     window.scrollTo(0, 0); // Scroll back to the top
 });
+window.addEventListener('load', function() {
+    document.body.style.visibility = 'visible'; // Make the page content visible after loading
+
+    // Hide the loading spinner after the page is loaded
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none'; 
+});
