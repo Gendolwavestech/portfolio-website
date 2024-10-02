@@ -90,3 +90,18 @@ document.querySelector('.close-modal').addEventListener('click', () => {
     document.querySelector('#modal').style.display = 'none'; // Hide modal
 });
 // Back to top button functionality
+// Reset states on page load (handle back button issue)
+window.addEventListener('pageshow', function() {
+    const modal = document.querySelector('#modal');
+    if (modal) {
+        modal.style.display = 'none'; // Close modal on page show
+    }
+
+    // Reset active or visible project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.classList.remove('show');
+    });
+
+    window.scrollTo(0, 0); // Scroll back to the top
+});
