@@ -68,7 +68,7 @@ backToTopButton.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scroll back to top
 });
 
-// Example of opening a modal when clicking a project card
+// Modal behavior - Open project modal
 const projectCardsClickable = document.querySelectorAll('.project-card');
 
 projectCardsClickable.forEach(card => {
@@ -89,7 +89,7 @@ function openModal(info) {
 document.querySelector('.close-modal').addEventListener('click', () => {
     document.querySelector('#modal').style.display = 'none'; // Hide modal
 });
-// Back to top button functionality
+
 // Reset states on page load (handle back button issue)
 window.addEventListener('pageshow', function() {
     const modal = document.querySelector('#modal');
@@ -105,6 +105,8 @@ window.addEventListener('pageshow', function() {
 
     window.scrollTo(0, 0); // Scroll back to the top
 });
+
+// On page load - hide loader and make content visible
 window.addEventListener('load', function() {
     document.body.style.visibility = 'visible'; // Make the page content visible after loading
 
